@@ -26,5 +26,8 @@
     "eslint-plugin-import": "^2.8.0",
     "stylelint": "^8.4.0",
     "stylelint-config-standard": "^18.0.0"
+  },
+  "dependencies": {
+    "nconf": "^0.10.0"
   }
 }
