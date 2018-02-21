@@ -11,7 +11,9 @@ module.exports.toDownload = (url, cb) => {
     gzip: true,
   };
   request(options, (error, response, body) => {
-    logger.log(`${url} ${response.statusCode}`);
+    if (response.statusCode !== 200) {
+      logger.log(`${url} ${response.statusCode}`);
+    }
     if (error) {
       logger.log(error);
       cb(error);
