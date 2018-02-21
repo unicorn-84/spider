@@ -1,10 +1,10 @@
 {
   "name": "Spider",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Web scraper of news sites",
   "main": "spider.js",
   "scripts": {
-    "start": "nodemon spider.js"
+    "start": "node spider.js"
   },
   "repository": {
     "type": "git",
@@ -21,10 +21,10 @@
     "node": "8.9.1"
   },
   "devDependencies": {
-    "eslint": "^4.13.1",
+    "eslint": "^4.18.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
-    "stylelint": "^8.4.0",
+    "stylelint": "^9.1.0",
     "stylelint-config-standard": "^18.0.0"
   },
   "dependencies": {
