@@ -1,9 +1,12 @@
 const db = require('./libs/db');
+const logger = require('./libs/logger');
+
+logger.log('Spider started');
 
 db.connectToDb('newsbucket', (error, dbObject) => {
   if (error) {
-    console.log(error);
+    logger.log(error);
     return;
   }
-  console.log(dbObject);
+  logger.log('Connect to mLab');
 });
