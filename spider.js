@@ -3,6 +3,7 @@ const logger = require('./libs/logger');
 const requester = require('./libs/requester');
 const massMedia = require('./massMedia');
 const config = require('./libs/config');
+const parser = require('./libs/parser');
 
 const dbName = config.get('db:mlab:name');
 const collection = config.get('db:mlab:collection');
@@ -11,8 +12,8 @@ let completed = 0;
 
 logger.log('Spider started');
 
-function toUpdateData(database, item, body, cb) {
-  database.collection(collection).update({ name: item.name }, { $set: { body } }, (error) => {
+function toUpdateData(database, item, news, cb) {
+  database.collection(collection).update({ name: item.name }, { $set: { news } }, (error) => {
     if (error) {
       cb(error);
       return;
@@ -21,8 +22,8 @@ function toUpdateData(database, item, body, cb) {
   });
 }
 
-function toRecordData(database, item, body, cb) {
-  database.collection(collection).insert({ name: item.name, body }, (error) => {
+function toRecordData(database, item, news, cb) {
+  database.collection(collection).insert({ name: item.name, news }, (error) => {
     if (error) {
       cb(error);
       return;
@@ -31,17 +32,27 @@ function toRecordData(database, item, body, cb) {
   });
 }
 
-function toCheckData(database, item, body, cb) {
+function toCheckData(database, item, news, cb) {
   database.collection(collection).findOne({ name: item.name }, (error, result) => {
     if (error) {
       cb(error);
       return;
     }
     if (!result) {
-      toRecordData(database, item, body, cb);
+      toRecordData(database, item, news, cb);
       return;
     }
-    toUpdateData(database, item, body, cb);
+    toUpdateData(database, item, news, cb);
+  });
+}
+
+function toParse(database, body, item, cb) {
+  parser.toParseBody(body, item, (error, news) => {
+    if (error) {
+      cb(error);
+      return;
+    }
+    toCheckData(database, item, news, cb);
   });
 }
 
@@ -52,7 +63,7 @@ function toDownload(database, cb) {
         cb(error);
         return;
       }
-      toCheckData(database, item, body, cb);
+      toParse(database, body, item, cb);
     });
   });
 }
