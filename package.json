@@ -1,6 +1,6 @@
 {
   "name": "Spider",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Web scraper of news sites",
   "main": "spider.js",
   "scripts": {
@@ -23,8 +23,8 @@
   "devDependencies": {
     "eslint": "^4.18.1",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.8.0",
-    "stylelint": "^9.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "stylelint": "^9.1.1",
     "stylelint-config-standard": "^18.0.0"
   },
   "dependencies": {
