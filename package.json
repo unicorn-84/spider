@@ -1,7 +1,7 @@
 {
   "name": "Spider",
   "version": "1.1.0",
-  "description": "Web scraper of news sites",
+  "description": "Web parser of news sites",
   "main": "spider.js",
   "scripts": {
     "start": "node spider.js"

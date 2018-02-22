@@ -1,6 +1,6 @@
 # Spider
-**Web scraper of news sites**
+**Web parser of news sites**
 
 *Current version - 1.1.0*
 
-Spider scrape links of news from some news sites.
+Spider parses links of news from some news sites.
