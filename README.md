@@ -1,4 +1,4 @@
-# Spider
+# spider
 **Web parser of news sites**
 
 *Current version - 1.1.0*
