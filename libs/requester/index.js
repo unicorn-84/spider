@@ -1,7 +1,7 @@
 const request = require('request');
 const iconv = require('iconv-lite');
 const charsetParser = require('charset-parser');
-const logger = require('../logger');
+const logger = require('uni-logger');
 
 module.exports.toDownload = (url, cb) => {
   const options = {

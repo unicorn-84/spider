@@ -1,5 +1,5 @@
 const db = require('./libs/db');
-const logger = require('./libs/logger');
+const logger = require('uni-logger');
 const requester = require('./libs/requester');
 const massMedia = require('./massMedia');
 const config = require('./libs/config');
