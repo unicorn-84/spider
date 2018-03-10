@@ -4,19 +4,19 @@
   "description": "Web parser of news sites",
   "main": "index.js",
   "scripts": {
-    "start": "node spider.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://unicorn-84@bitbucket.org/unicorn-84/spider.git"
+    "url": "git+https://github.com/unicorn-84/spider.git"
   },
   "keywords": [
     "scraping",
     "parsing"
   ],
-  "author": "WebUnicorns",
+  "author": "unicorn-84",
   "license": "MIT",
-  "homepage": "https://bitbucket.org/unicorn-84/spider#readme",
+  "homepage": "https://github.com/unicorn-84/spider#readme",
   "engines": {
     "node": "8.9.1"
   },
