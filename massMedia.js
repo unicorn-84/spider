@@ -17,7 +17,7 @@ module.exports = [
   {
     name: 'interfax',
     brand: 'Интерфакс',
-    url: 'https://interfax.ru',
+    url: 'http://interfax.ru',
   },
   {
     name: 'rosbalt',

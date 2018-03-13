@@ -10,7 +10,7 @@ const collection = config.get('db:mlab:collection');
 const count = massMedia.length;
 let completed = 0;
 
-logger.log('Spider started');
+logger.log('Spider started\n');
 
 function toUpdateData(database, item, news, cb) {
   database.collection(collection).update({ name: item.name }, { $set: { news } }, (error) => {
@@ -73,17 +73,16 @@ db.connectToDb(dbName, (error, dbObject) => {
     logger.log(error);
     return;
   }
-  logger.log('Connect to mLab');
+  logger.log('Connect to mLab\n');
   const database = dbObject.db(dbName);
   toDownload(database, (err) => {
     if (err) {
       logger.log(err);
-      return;
     }
     completed += 1;
     if (completed === count) {
       dbObject.close();
-      logger.log('Spider finished');
+      logger.log('Spider finished\n');
     }
   });
 });
