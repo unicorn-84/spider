@@ -70,14 +70,14 @@ function toDownload(database, cb) {
 
 db.connectToDb(dbName, (error, dbObject) => {
   if (error) {
-    logger.log(error);
+    logger.log(`${error}\n`);
     return;
   }
   logger.log('Connect to mLab\n');
   const database = dbObject.db(dbName);
   toDownload(database, (err) => {
     if (err) {
-      logger.log(err);
+      logger.log(`${err}\n`);
     }
     completed += 1;
     if (completed === count) {
