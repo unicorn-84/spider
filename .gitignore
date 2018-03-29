@@ -1,6 +1,4 @@
 .idea
-.eslintrc.yml
-.stylelintrc.yml
 node_modules
 db.json
 logs
