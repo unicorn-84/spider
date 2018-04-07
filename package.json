@@ -21,17 +21,17 @@
     "node": "8.9.1"
   },
   "devDependencies": {
-    "eslint": "^4.18.2",
+    "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.9.0"
+    "eslint-plugin-import": "^2.10.0"
   },
   "dependencies": {
     "charset-parser": "^0.2.0",
     "cheerio": "^1.0.0-rc.2",
-    "iconv-lite": "^0.4.19",
-    "mongodb": "^3.0.4",
+    "iconv-lite": "^0.4.21",
+    "mongodb": "^3.0.5",
     "nconf": "^0.10.0",
-    "request": "^2.83.0",
-    "uni-logger": "^1.1.4"
+    "request": "^2.85.0",
+    "uni-logger": "^2.0.1"
   }
 }

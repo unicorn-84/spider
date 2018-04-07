@@ -1,5 +1,5 @@
 const db = require('./libs/db');
-const logger = require('uni-logger');
+const Logger = require('uni-logger');
 const requester = require('./libs/requester');
 const massMedia = require('./massMedia');
 const config = require('./libs/config');
@@ -10,7 +10,7 @@ const collection = config.get('db:mlab:collection');
 const count = massMedia.length;
 let completed = 0;
 
-logger.log('Spider started\n');
+const logger = new Logger({ path: config.get('logDir') });
 
 function toUpdateData(database, item, news, cb) {
   database.collection(collection).update({ name: item.name }, { $set: { news } }, (error) => {
@@ -82,7 +82,6 @@ db.connectToDb(dbName, (error, dbObject) => {
     completed += 1;
     if (completed === count) {
       dbObject.close();
-      logger.log('Spider finished\n');
     }
   });
 });
