@@ -4,6 +4,8 @@ const requester = require('./libs/requester');
 const massMedia = require('./massMedia');
 const config = require('./libs/config');
 const parser = require('./libs/parser');
+const spider = require('./spider');
+
 
 const dbName = config.get('db:mlab:name');
 const collection = config.get('db:mlab:collection');
@@ -57,15 +59,15 @@ function toParse(database, body, item, cb) {
 }
 
 function toDownload(database, cb) {
-  massMedia.forEach((item) => {
-    requester.toDownload(item.url, (error, body) => {
+  // massMedia.forEach((item) => {
+    requester.toDownload('http://www.fontanka.ru', (error, body) => {
       if (error) {
         cb(error);
         return;
       }
       toParse(database, body, item, cb);
     });
-  });
+  // });
 }
 
 db.connectToDb(dbName, (error, dbObject) => {
@@ -83,5 +85,11 @@ db.connectToDb(dbName, (error, dbObject) => {
     if (completed === count) {
       dbObject.close();
     }
+    // process.exit();
   });
 });
+
+
+(function index() {
+  massMedia.forEach(spider);
+}());

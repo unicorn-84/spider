@@ -32,7 +32,7 @@ module.exports = [
   {
     name: 'radioSvoboda',
     brand: 'Радио Свобода',
-    url: 'https://svoboda.org',
+    url: 'https://www.svoboda.org',
   },
   {
     name: 'prime',
