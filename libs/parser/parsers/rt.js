@@ -7,6 +7,10 @@ function toReplace(elem) {
 module.exports.toParse = ($, item, cb) => {
   const news = [];
   const mainBlock = $('.listing__rows_main-promobox').first();
+  if (mainBlock.html() === null) {
+    cb(`${item.name}: '.listing__rows_main-promobox' not found`);
+    return;
+  }
   const mainList = mainBlock.children('li').not('.listing__column_main-promobox_foreign-press');
   mainList.each(function toGetNews() {
     news.push({

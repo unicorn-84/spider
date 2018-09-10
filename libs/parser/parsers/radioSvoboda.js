@@ -10,6 +10,10 @@ function toReplace(elem) {
 module.exports.toParse = ($, item, cb) => {
   const news = [];
   const mainBlock = $('#wrowblock-11169_57');
+  if (mainBlock.html() === null) {
+    cb(`${item.name}: '#wrowblock-11169_57' not found`);
+    return;
+  }
   const mainList = mainBlock.find('.media-block').filter(i => i <= 4);
   mainList.each(function toGetNews() {
     news.push({

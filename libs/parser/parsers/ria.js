@@ -3,6 +3,10 @@ const newsChecker = require('../newsChecker');
 module.exports.toParse = ($, item, cb) => {
   const news = [];
   const mainBlock = $('.b-index__main-wr');
+  if (mainBlock.html() === null) {
+    cb(`${item.name}: '.b-index__main-wr' not found`);
+    return;
+  }
   const mainNews = mainBlock.find('.b-index__main-news');
   const mainList = mainBlock.find('.b-index__main-list li');
   news.push({

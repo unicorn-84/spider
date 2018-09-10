@@ -3,6 +3,10 @@ const newsChecker = require('../newsChecker');
 module.exports.toParse = ($, item, cb) => {
   const news = [];
   const mainBlock = $('.main-slider-items');
+  if (mainBlock.html() === null) {
+    cb(`${item.name}: '.main-slider-items' not found`);
+    return;
+  }
   const mainNews = mainBlock.find('.main-slider__item').first();
   const mainList = mainBlock.find('.main-slider__subitem').first().find('.single-item');
   news.push({

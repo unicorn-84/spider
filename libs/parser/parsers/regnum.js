@@ -3,6 +3,10 @@ const newsChecker = require('../newsChecker');
 module.exports.toParse = ($, item, cb) => {
   const news = [];
   const mainBlock = $('.news-container');
+  if (mainBlock.html() === null) {
+    cb(`${item.name}: '.news-container' not found`);
+    return;
+  }
   const newsList = mainBlock.find('.news-container-item').filter(i => i <= 3);
   newsList.each(function toGetNews() {
     news.push({
