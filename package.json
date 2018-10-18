@@ -2,7 +2,7 @@
   "name": "spider",
   "version": "1.4.0",
   "description": "Web parser of news sites",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "start": "node index.js"
   },
@@ -10,12 +10,8 @@
     "type": "git",
     "url": "git+https://github.com/unicorn-84/spider.git"
   },
-  "keywords": [
-    "scraping",
-    "parsing"
-  ],
-  "author": "unicorn-84",
-  "license": "MIT",
+  "author": "unicorn-84 <unicorn-84@ya.ru> (https://github.com/unicorn-84)",
+  "license": "UNLICENSED",
   "homepage": "https://github.com/unicorn-84/spider#readme",
   "engines": {
     "node": ">=8.9.1"
@@ -23,9 +19,7 @@
   "devDependencies": {
     "eslint": "5.7.0",
     "eslint-config-airbnb-base": "13.1.0",
-    "eslint-plugin-import": "^2.14.0"
-  },
-  "dependencies": {
+    "eslint-plugin-import": "^2.14.0",
     "charset-parser": "^0.2.0",
     "cheerio": "^1.0.0-rc.2",
     "iconv-lite": "^0.4.24",
