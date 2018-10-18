@@ -22,4 +22,3 @@ module.exports.toParse = ($, item, cb) => {
   });
   cb(null, news);
 };
-

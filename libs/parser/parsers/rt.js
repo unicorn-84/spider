@@ -20,7 +20,8 @@ module.exports.toParse = ($, item, cb) => {
       brand: item.brand,
       title: newsChecker.toCheckNews($(this).find('a').eq(2).text()),
       link: newsChecker.toCheckNews($(this).find('a').first().attr('href'), item.url),
-      image: toReplace(newsChecker.toCheckNews($(this).find('a').first().parent().attr('style'))),
+      image: toReplace(newsChecker.toCheckNews($(this).find('a').first().parent()
+        .attr('style'))),
       section: newsChecker.toCheckNews($(this).find('a').eq(1).text()),
     });
   });
