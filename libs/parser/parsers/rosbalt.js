@@ -3,6 +3,10 @@ const newsChecker = require('../newsChecker');
 module.exports.toParse = ($, item, cb) => {
   const news = [];
   const mainBlock = $('.headblock-main');
+  if (mainBlock.html() === null) {
+    cb(`${item.name}: '.headblock-main' not found`);
+    return;
+  }
   const mainList = mainBlock.children('div').not('.main-content__topnews');
   mainList.each(function toGetNews() {
     news.push({
