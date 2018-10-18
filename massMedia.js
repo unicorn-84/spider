@@ -50,4 +50,3 @@ module.exports = [
     url: 'https://russian.rt.com',
   },
 ];
-

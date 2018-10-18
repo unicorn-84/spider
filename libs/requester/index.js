@@ -17,7 +17,7 @@ module.exports.toDownload = (url, cb) => {
     if (error) {
       cb(error);
       return;
-    } else if (response.statusCode !== 200) {
+    } if (response.statusCode !== 200) {
       logger.log(`${url} ${response.statusCode}\n`);
       return;
     }
